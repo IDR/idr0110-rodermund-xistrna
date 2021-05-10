@@ -1,0 +1,85 @@
+---
+name: idr0110-rodermund-xistrna/experimentA/
+
+version: 1
+
+defaults:
+  include: no
+  type: string
+  includeclient: yes
+  visible: yes
+  omitempty: yes
+  split: ;
+
+columns:
+
+  - name: Experimental Condition
+    clientname: Experimental Condition
+    include: yes
+
+  - name: Comment [Image File Type]
+    clientname: Image File Type
+    include: yes
+
+  - name: Protocol REF 1
+    clientname: Protocol
+    include: yes
+
+  - name: Protocol REF 2
+    clientname: Protocol
+    include: yes
+
+  - name: Protocol REF 3
+    clientname: Protocol
+    include: yes
+
+  - name: Channels
+    include: true
+
+
+  ######################################################################
+  # mapr groups
+  ######################################################################
+
+  - group:
+      namespace: openmicroscopy.org/mapr/organism
+      columns:
+        - name: Characteristics [Organism]
+          clientname: Organism
+          include: yes
+
+  - group:
+      namespace: openmicroscopy.org/mapr/gene
+      columns:
+      - name: Comment [Gene Identifier]
+        clientname: Gene Identifier
+        include: yes
+      - name: Comment [Gene Identifier]
+        clientname: Gene Identifier URL
+        clientvalue: http://www.ensembl.org/id/{{ value|urlencode }}
+        include: yes
+      - name: Comment [Gene Symbol]
+        clientname: Gene Symbol
+        include: yes
+
+  - group:
+      namespace: openmicroscopy.org/mapr/cell_line
+      columns:
+      - name: Characteristics [Cell Line]
+        clientname: Cell Line
+        include: yes
+
+
+advanced:
+  ignore_missing_primary_key: yes
+  primary_group_keys:
+    - namespace: openmicroscopy.org/mapr/organism
+      keys:
+        - Organism
+    - namespace: openmicroscopy.org/mapr/gene
+      keys:
+        - Gene Identifier
+        - Gene Symbol
+    - namespace: openmicroscopy.org/mapr/cell_line
+      keys:
+        - Cell Line
