@@ -15,7 +15,7 @@ find * -name "*.tif" -exec sh -c 'echo "$1"; showinf -nopix "$1" |
 SIZE_X = 512
 SIZE_Y = 512
 SIZE_T = 1
-SIZE_C = 1
+SIZE_C = 2
 CHANNEL_NAME = "0"
 ORDER = "XYCTZ"
 TYPE = "uint16"
