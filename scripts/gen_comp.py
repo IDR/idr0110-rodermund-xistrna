@@ -12,28 +12,26 @@ find * -name "*.tif" -exec sh -c 'echo "$1"; showinf -nopix "$1" |
     grep SizeT' _ {} \; >> /tmp/sizeT.txt 
 """
 
-SIZE_X = 512
-SIZE_Y = 512
 SIZE_T = 1
-SIZE_C = 2
-CHANNEL_NAME = "0"
 ORDER = "XYCTZ"
 TYPE = "uint16"
-SPP = 1
 OUTPUT_DIR = "../experimentA/companions"
 BASE_DIR = "/uod/idr/filesets/idr0110-rodermund-xistrna/20210404-ftp"
 
-IMAGE_FILES_SRC = "sizeT.txt"
+IMAGE_FILES_SRC = "image_info.txt"
 """
-20190813_Pulse_Chase_3_CIZ1KO_Xist_turnover_on_chromatin_Maintenance_160min_10_FUS_SIR_THR_MCF_ALN-full.tif
-    SizeT = 106
+20180526_Xist_turnover_pulsechase1_transgenic_diAcFAM_JF585_0_02_FUS_SIR_THR_MCF_ALN-full.tif
+	Width = 512
+	Height = 512
+	SizeZ = 1
+	SizeT = 88
+	SizeC = 1
 """
 
 
-def create_companion(filename, x, y, z, c, channel_name, t, order, type, spp):
+def create_companion(filename, x, y, z, c, t, order, type):
   companion = ome.Image(filename, x, y, z, c,
       sizeT=t, order=order, type=type)
-  companion.add_channel(name=channel_name, samplesPerPixel=spp)
   companion.add_tiff(filename)
   companion_file = f"{OUTPUT_DIR}/{filename}.companion.ome"
 
@@ -43,13 +41,14 @@ def create_companion(filename, x, y, z, c, channel_name, t, order, type, spp):
 
 
 image_files = open(IMAGE_FILES_SRC, 'r').readlines()
-for i in range(0, len(image_files)-1, 2):
-  image_file = image_files[i].strip()
-  size_z = image_files[i+1].strip()
-  size_z = int(size_z.split("=")[1].strip())
+for i in range(0, len(image_files)-1, 6):
+  image_file = image_files[i].strip() # 20180526_Xist_turnover_pulsechase1_transgenic_diAcFAM_JF585_0_02_FUS_SIR_THR_MCF_ALN-full.tif
+  w = image_files[i+1].strip().split("=")[1].strip() # Width = 512
+  h = image_files[i+2].strip().split("=")[1].strip() # Height = 512
+  z = image_files[i+4].strip().split("=")[1].strip() # SizeT = 1
+  c = image_files[i+5].strip().split("=")[1].strip() # SizeC = 1
   try:
-    comp = create_companion(image_file, SIZE_X, SIZE_Y, size_z, SIZE_C,
-                            CHANNEL_NAME, SIZE_T, ORDER, TYPE, SPP)
+    comp = create_companion(image_file, w, h, z, c, SIZE_T, ORDER, TYPE)
     print(comp)
     ln_src = f"{BASE_DIR}/{image_file}"
     ln_tgt = f"{OUTPUT_DIR}/{image_file}"
