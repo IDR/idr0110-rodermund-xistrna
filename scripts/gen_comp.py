@@ -48,7 +48,8 @@ for i in range(0, len(image_files)-1, 6):
   w = image_files[i+1].strip().split("=")[1].strip() # Width = 512
   h = image_files[i+2].strip().split("=")[1].strip() # Height = 512
   z = image_files[i+4].strip().split("=")[1].strip() # SizeT = 1
-  c = image_files[i+5].strip().split("=")[1].strip() # SizeC = 1
+  #c = image_files[i+5].strip().split("=")[1].strip() # SizeC = 1
+  c = 3
   try:
     comp = create_companion(image_file, w, h, z, c, SIZE_T, ORDER, TYPE)
     print(comp)
