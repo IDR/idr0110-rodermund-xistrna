@@ -13,7 +13,7 @@ find * -name "*.tif" -exec sh -c 'echo "$1"; showinf -nopix "$1" |
 """
 
 SIZE_T = 1
-ORDER = "XYCTZ"
+ORDER = "XYCZT"
 TYPE = "uint16"
 OUTPUT_DIR = "../experimentA/companions"
 BASE_DIR = "/uod/idr/filesets/idr0110-rodermund-xistrna/20210404-ftp"
@@ -26,6 +26,8 @@ IMAGE_FILES_SRC = "image_info.txt"
 	SizeZ = 1
 	SizeT = 88
 	SizeC = 1
+...
+Generate with find * -name "*.tif" -exec sh -c 'echo "$1"; showinf -nopix "$1" | grep "Size\|Width \|Height"' _ {} \; >> /tmp/image_info.txt
 """
 
 
