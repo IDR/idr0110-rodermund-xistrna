@@ -13,7 +13,7 @@ find * -name "*.tif" -exec sh -c 'echo "$1"; showinf -nopix "$1" |
 """
 
 SIZE_T = 1
-ORDER = "XYCZT"
+ORDER = "XYCTZ"
 TYPE = "uint16"
 OUTPUT_DIR = "../experimentA/companions"
 BASE_DIR = "/uod/idr/filesets/idr0110-rodermund-xistrna/20210404-ftp"
