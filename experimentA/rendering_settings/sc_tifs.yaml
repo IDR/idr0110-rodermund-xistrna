@@ -1,0 +1,16 @@
+---
+channels:
+    1:
+        active: true
+        color: 0000FF
+        label: 'DAPI'
+    2:
+        active: false
+        color: FF00FF
+        label: 'empty'
+    3:
+        active: true
+        color: 00FF00
+        label: 'BglG-Halo'
+greyscale: false
+version: 2

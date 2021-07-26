@@ -1,0 +1,16 @@
+---
+channels:
+    1:
+        active: true
+        color: 00FFFF
+        label: 'First HaloTag'
+    2:
+        active: true
+        color: FF0000
+        label: 'Second HaloTag'
+    3:
+        active: true
+        color: 0000FF
+        label: 'DAPI'
+greyscale: false
+version: 2
