@@ -12,8 +12,8 @@ defaults:
 
 columns:
 
-  - name: Experimental Condition
-    clientname: Experimental Condition
+  - name: Experimental Condition [RNA Labelling]
+    clientname: RNA Labelling
     include: yes
 
   - name: Comment [Image File Type]
@@ -31,9 +31,6 @@ columns:
   - name: Protocol REF 3
     clientname: Protocol
     include: yes
-
-  - name: Channels
-    include: true
 
 
   ######################################################################
@@ -80,6 +77,13 @@ columns:
       columns:
       - name: Characteristics [Cell Line]
         clientname: Cell Line
+        include: yes
+
+  - group:
+      namespace: openmicroscopy.org/mapr/cell_line/supplementary
+      columns:
+      - name: Comment [Cell Line]
+        clientname: Comment Cell Line
         include: yes
 
 
