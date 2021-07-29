@@ -1,0 +1,99 @@
+# FILL IN AS MUCH INFORMATION AS YOU CAN.  HINTS HAVE BEEN PUT IN SOME FIELDS AFTER THE HASH # SYMBOL. REPLACE THE HINT WITH TEXT WHERE APPROPRIATE.							
+# STUDY DESCRIPTION SECTION				
+# Section with generic information about the study including title, description, publication details (if applicable) and contact details				
+				
+Comment[IDR Study Accession]	idr0110	
+Study Title	Time-resolved structured illumination microscopy reveals key principles of Xist RNA spreading		
+Study Type	X-chromosome inactivation			
+Study Type Term Source REF	NCIT				
+Study Type Term Accession	NCIT_C20674			
+Study Description	Xist RNA directs the process of X-chromosome inactivation in mammals by spreading in cis along the chromosome from which it is transcribed and recruiting chromatin modifiers to silence gene transcription. To elucidate mechanisms of Xist RNA cis-confinement, we established a sequential dual-color labeling, super-resolution imaging approach to trace individual Xist RNA molecules over time, enabling us to define fundamental parameters of spreading. We demonstrate a feedback mechanism linking Xist RNA synthesis and degradation, and an unexpected physical coupling between preceding and newly synthesized Xist RNA molecules. Additionally, we find that the protein SPEN, a key factor for Xist-mediated gene-silencing, has a distinct function in Xist RNA localization, stability and coupling behavior. Our results provide important insights towards understanding the unique dynamic properties of Xist RNA.			
+Study Key Words	Xist	X-chromosome inactivation	3D-SIM	RNA-SPLIT	SPEN	CIZ1			
+Study Organism	Mus musculus			
+Study Organism Term Source REF	NCBITaxon		
+Study Organism Term Accession	10090			
+Study Experiments Number	1			
+Study External URL		
+Study BioImage Archive Accession		
+Study Public Release Date	2021-08-03			
+				
+# Study Publication				
+Study PubMed ID	34112668			
+Study Publication Title	Time-resolved structured illumination microscopy reveals key principles of Xist RNA spreading	
+Study Author List	Rodermund L, Coker H, Oldenkamp R, Wei G, Bowness J, Rajkumar B, Nesterova T, Pinto DMS, Schermelleh L, Brockdorff N		
+Study PMC ID				
+Study DOI	https://doi.org/10.1126/science.abe7500			
+				
+# Study Contacts				
+Study Person Last Name	Rodermund	Schermelleh	Brockdorff	
+Study Person First Name	Lisa	Lothar	Neil	
+Study Person Email	lisa.rodermund@gmail.com	lothar.schermelleh@bioch.ox.ac.uk	neil.brockdorff@bioch.ox.ac.uk	
+Study Person Address	Department of Biochemistry, University of Oxford, South Parks Rd, Oxford, OX1 3QU	Department of Biochemistry, University of Oxford, South Parks Rd, Oxford, OX1 3QU	Department of Biochemistry, University of Oxford, South Parks Rd, Oxford, OX1 3QU	
+Study Person ORCID	0000-0002-3233-7885			
+Study Person Roles	submitter	Corresponding Author	Corresponding Author	
+				
+# Study License and Data DOI				
+Study License	CC BY 4.0			
+Study License URL	https://creativecommons.org/licenses/by/4.0/			
+Study Copyright	Rodermund et al			
+Study Data Publisher	University of Dundee			
+Study Data DOI				
+				
+Term Source Name	NCBITaxon	EFO	CMPO	FBbi
+Term Source URI	http://purl.obolibrary.org/obo/	http://www.ebi.ac.uk/efo/	http://www.ebi.ac.uk/cmpo/	http://purl.obolibrary.org/obo/
+				
+				
+# EXPERIMENT SECTION				
+# Experiment Section containing all information relative to each experiment in the study including materials used, protocols names and description, phenotype names and description. For multiple experiments this section should be repeated.  Copy and paste the whole section below and fill out for the next experiment				
+				
+Experiment Number	1			
+Comment[IDR Experiment Name]	idr0110-rodermund-xistrna/experimentA	
+Experiment Sample Type	cell		
+Experiment Description	In this project, XX mESCs with inducible endogenous Xist RNA, as well as XY mESCs with inducible autosomal transgenic Xist RNA, were used to study the localisation, dynamics and spreading behaviour of Xist RNA during the early phases of XCI. The Bgl-stem-loop labelling system was used in this project to label endogenous Xist RNA. A transgene encoding the BglG-Halo fusion protein was engineered to be doxycycline inducible. Later, different mutant cell lines were created using CRISPR/Cas9 genome editing. Considering the technical difficulties associated with live imaging of Xist foci, a different approach to studying Xist RNA dynamics was developed: RNA-SPLIT (Sequential Pulse Localisation Imaging over Time). In order to add temporal information one can make use of the fact that HaloTag technology enables addition of cell permeable ligands with different properties to cells, with excess ligand being washed out prior to fixation. Specifically, instead of a single HaloTag ligand, two different wavelength emitting HaloTag ligands were added sequentially after induction with doxycycline. Cells were induced for 1.5 h and 24 h before the start of the experiment to assess Xist localisation and dynamics in expansion and steady state respectively. Subsequent addition of the HaloTag ligands allowed for splitting the RNA into two differently labelled pools, pre-synthesised RNA labelled with Halo ligand 1 and newly synthesised RNA labelled with Halo ligand 2. This novel technique is especially powerful because variations of the set up can be used to study different aspects of RNA dynamics and localisation, and it can potentially be applied to any RNA and any stem-loop labelling system. Firstly, localisation of Xist to the X chromosome territory at the different stages of XCI and in different cellular backgrounds can be assessed by measuring the molecule density and volume of spread. Moreover, one can determine RNA turnover by scoring the number of pre-synthesised RNA molecules over time, while gradually increasing the staining time of newly synthesised RNA molecules for up to 4 h. Full turnover of the RNA can be assumed when no pre-synthesised RNA signal can be detected anymore. Turnover rates can be complemented by analysis of RNA transcription dynamics, quantified by scoring the number of newly synthesised RNA molecules while gradually increasing the staining time of newly synthesised RNA in 10 min intervals. Finally, RNA-SPLIT can be used to assess the localisation of newly synthesised RNA with respect to pre-synthesised RNA by measuring the distance of each newly synthesised molecule to the nearest pre-synthesised molecule. Image processing and analysis is critical for successful RNA-SPLIT experiments. After image acquisition with 3D-SIM, the data is reconstructed and undergoes quality checks through the SIMcheck plugin. Artefacts are reduced by generating modulation contrast maps and applying suitable and consistent filters to discard low modulation contrast signal. Then, background stemming from free diffusing BglG-Halo is discarded by manual thresholding. Channels are aligned using the open-source software package Chromagnon and EdU calibration data acquired on the date of image acquisition. In the final step of image processing, Xist territories are manually cropped. The volume of the cropped Xist territory gives first insights into the spreading volume of the RNA. To analyse the fully processed images, the signal is masked and the centroids of each molecule are determined by a Watershed algorithm. This allows for the counting of pre-synthesised and newly synthesised molecules at different time points and under various experimental conditions. RNA turnover and transcription dynamics can be deduced from this information. The localisation of each molecule in 3D determined by the Watershed algorithm can then be used to conduct NNA, where the distance of each newly synthesised molecule to its nearest neighbouring pre-synthesised molecule is measured. Variations of NNA, where distances between all RNA molecules or between the approximate transcription site and newly synthesised RNA are determined, can be used to examine RNA density and spreading behaviour. The development of this new tool for studying RNA localisation and dynamics allows for the addition of temporal resolution to super-resolved localisation microscopy data without the need for live cell imaging.			
+Experiment Size	5D Images:	Average Image Dimension (XYZCT):	Total Tb: 	
+Experiment Example Images			
+Experiment Imaging Method	structured illumination microscopy (SIM)			
+Experiment Imaging Method Term Source REF	Fbbi			
+Experiment Imaging Method Term Accession	FBbi_00000332
+Experiment Comments	3D-SIM			
+				
+# assay files				
+Experiment Assay File	idr0110-experimentA-annotation			
+Experiment Assay File Format	tab-delimited text			
+Assay Experimental Conditions	
+Assay Experimental Conditions Term Source REF				
+Assay Experimental Conditions Term Accession				
+Quality Control Description				
+				
+# Protocols				
+Protocol Name	growth protocol	treatment protocol	image acquisition and feature extraction protocol	data analysis protocol
+Protocol Type	growth protocol	treatment protocol	image acquisition and feature extraction protocol	data analysis protocol
+Protocol Type Term Source REF	EFO	EFO		
+Protocol Type Term Accession	EFO_0003789	EFO_0003969		
+Protocol Description	
+				
+# Phenotypes				
+Phenotype Name				
+Phenotype Description				
+Phenotype Score Type			
+Phenotype Term Source REF	CMPO			
+Phenotype Term Name				
+Phenotype Term Accession		 	
+				
+				
+# Feature Level Data Files (give individual file details unless there is one file per well)				
+Feature Level Data File Name				
+Feature Level Data File Format				
+Feature Level Data File Description				
+Feature Level Data Column Name				
+Feature Level Data Column Description				
+				
+#  Processed Data Files 				
+Processed Data File Name				
+Processed Data File Format	tab-delimited text			
+Processed Data File Description				
+Processed Data Column Name				
+Processed Data Column Type				
+Processed Data Column Annotation Level				
+Processed Data Column Description				
+Processed Data Column Link To Assay File				
